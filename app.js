@@ -358,7 +358,7 @@ function receivedAccountLink(event) {
  */
 function sendTextMessage(recipientId, messageText) {
   
-  messageText = createResponse();
+  messageText = createResponse(messageText);
   var messageData = {
     recipient: {
       id: recipientId
