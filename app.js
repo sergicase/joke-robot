@@ -357,6 +357,8 @@ function receivedAccountLink(event) {
  *
  */
 function sendTextMessage(recipientId, messageText) {
+  
+  messageText = createResponse();
   var messageData = {
     recipient: {
       id: recipientId
@@ -433,6 +435,21 @@ function callSendAPI(messageData) {
       console.error(response.error);
     }
   });  
+}
+
+
+
+
+function createResponse(messageText){
+
+  var response;
+  if(messageText.includes("stupid") || messageText.includes("fuck u")){
+    response = "Oh you are so rude!";
+  }
+
+  return response;
+
+
 }
 
 // Start server
